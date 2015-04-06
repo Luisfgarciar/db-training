@@ -3,6 +3,8 @@ package co.com.psl.elitemovie.repository;
 import java.text.ParseException;
 import java.util.Collection;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -33,7 +35,7 @@ public class DataInitialization {
 	@Value("${start_date_for_movies}")
 	private String startDateForMoviesString;
 
-	// @PostConstruct
+	@PostConstruct
 	public void init() throws ParseException {
 		Collection<Movie> movies = movieRepository.findAll();
 
