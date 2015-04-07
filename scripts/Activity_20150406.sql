@@ -6,7 +6,6 @@ with recursive nodes (id, comment, author, parent_comment_id, movie_id) as (
 		select c.id, c.comment, c.author, c.parent_comment_id, c.movie_id
 		from comment as c 
 		where c.id = 32 -- Id to find.
-		and c.movie_id = 8 -- Movie Id.
 	UNION ALL
 		select c.id, c.comment, c.author, c.parent_comment_id, c.movie_id 
 		from nodes ns
